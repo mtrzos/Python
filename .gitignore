@@ -1,6 +1,3 @@
-.cache/
-decimalToBinary.py
-.DS_Store
 ./**/.DS_Store
 ./**/__pycache__/
 ./**/.cache/
