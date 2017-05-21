@@ -23,10 +23,9 @@ def handshake(code):
 
 
 def code(arr):
-    count = 0
     code = 0
     lastIndex = 0
-    for item in arr:
+    for count, item in enumerate(arr):
         if item in validCodes:
             code += addDigitToCode(item, code)
             if validCodes.index(item) < lastIndex and code < 9999:
@@ -34,7 +33,6 @@ def code(arr):
             lastIndex = validCodes.index(item)
         else:
             return '0'
-        count += 1
     return str(code)
 
 def addSignalToCommands( count, commands ):
