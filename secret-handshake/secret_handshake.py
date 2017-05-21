@@ -3,36 +3,37 @@ import math
 validCodes = ['wink', 'double blink', 'close your eyes', 'jump']
 
 def handshake(code):
-    count = 0
     commands = []
     code = code
     if type(code) is str:
-        for char in code[::-1]:
+        for count, char in enumerate(code[::-1]):
             if char  == '1':
                 addSignalToCommands( count, commands )
             if char  != '1' and char != '0':
                 return []
-            count += 1
     else:
+        count = 0
         while code > 0:
             if (code % 2) == 1:
                 addSignalToCommands( count, commands )
             code = math.floor(code / 2)
             count += 1
+
     return commands
 
 
 def code(arr):
     code = 0
-    lastIndex = 0
+    lastIndexChecked = 0
     for count, item in enumerate(arr):
         if item in validCodes:
             code += addDigitToCode(item, code)
-            if validCodes.index(item) < lastIndex and code < 9999:
+            if validCodes.index(item) < lastIndexChecked and code < 9999:
                 code += 10000
-            lastIndex = validCodes.index(item)
+            lastIndexChecked = validCodes.index(item)
         else:
             return '0'
+
     return str(code)
 
 def addSignalToCommands( count, commands ):

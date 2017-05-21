@@ -1,3 +1,9 @@
 {
-  "secret_handshake_test.py": true
+  "secret_handshake_test.py::HandshakeTest::test_code1": true,
+  "secret_handshake_test.py::HandshakeTest::test_code2": true,
+  "secret_handshake_test.py::HandshakeTest::test_code3": true,
+  "secret_handshake_test.py::HandshakeTest::test_composition1": true,
+  "secret_handshake_test.py::HandshakeTest::test_composition2": true,
+  "secret_handshake_test.py::HandshakeTest::test_composition3": true,
+  "secret_handshake_test.py::HandshakeTest::test_composition4": true
 }
